@@ -1,0 +1,172 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Whishing you a Happy Diwali ✨</title>
+  <style>
+    :root{
+      --bg1:#b4d20a; /* deep night */
+      --accent:#f1be18; /* diya glow */
+      --glass:#ffffff22;
+    }
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{
+      background: radial-gradient(1200px 600px at 10% 20%, #1b2338 0%, rgba(11,16,32,1) 30%),
+                  linear-gradient(180deg,#07102a 0%, #02040a 100%);
+      color:#fff;
+      overflow:hidden;
+      display:flex;align-items:center;justify-content:center;flex-direction:column;padding:40px
+    }/* Main message */
+.card{
+  text-align:center;
+  width:min(1000px,94%);
+  padding:32px 28px 48px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  box-shadow: 0 10px 30px rgba(3,6,15,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+  position:relative;
+  overflow:hidden;
+}
+
+h1{
+  margin:0 0 8px 0;
+  font-size:clamp(32px,6vw,84px);
+  letter-spacing:1px;
+  line-height:0.95;
+  transform:translateY(-6px);
+  text-shadow:
+    0 6px 18px rgba(0,0,0,0.6),
+    0 0 18px rgba(255,207,51,0.08);
+}
+
+.happy{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#be8c02,#ffd24a);
+  color:#2a1600;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(255,180,40,0.12), 0 1px 0 rgba(255,255,255,0.05) inset;
+  transform-origin:center;
+  animation:bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-8px) scale(1.02)}
+}
+
+.sub{
+  margin-top:6px;color:#cfd8ff88;font-size:clamp(12px,1.6vw,18px)
+}
+
+/* Decorative fireworks (pure CSS) */
+.fireworks{
+  pointer-events:none;
+  position:absolute;inset:0;z-index:0;
+}
+
+.firework{
+  position:absolute;left:50%;top:40%;width:6px;height:6px;border-radius:50%;
+  transform-origin:center;
+  opacity:0;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+}
+
+/* we use multiple pseudo-particles created by box-shadow for each firework */
+.f1{left:12%;top:18%;background:transparent;animation:burst 1.6s linear infinite 0s}
+.f1:after{content:'';display:block;width:6px;height:6px;border-radius:50%;background:#ff5c5c;box-shadow: 0 -12px #ffb86b, 10px -8px #0865bc, -10px -6px #ffd56b, 16px 2px #2f0221, -14px 8px #ffd56b, 22px 12px #fff;opacity:0.95}
+
+.f2{left:36%;top:10%;animation:burst 1.9s linear infinite 0.3s}
+.f2:after{content:'';display:block;width:6px;height:6px;border-radius:50%;background:#7bf1ff;box-shadow: 0 -14px #7be4c7, 12px -6px #5f07bd, -12px -6px #b7f0ff, 18px 6px #7be4ff, -16px 10px #a8ffd6}
+
+.f3{left:76%;top:22%;animation:burst 1.7s linear infinite 0.7s}
+.f3:after{content:'';display:block;width:6px;height:6px;border-radius:50%;background:#ffd56b;box-shadow: 0 -12px #ffb86b, -10px -8px #ffb86b, 10px -6px #ffd56b, -16px 6px #d70707, 14px 12px #fff}
+
+.f4{left:60%;top:6%;animation:burst 2.1s linear infinite 0.9s}
+.f4:after{content:'';display:block;width:6px;height:6px;border-radius:50%;background:#b98bff;box-shadow: 0 -12px #7be4ff, 12px -10px #ffd56b, -12px -6px #ffd56b, 16px 8px #ff8fb9, -14px 12px #fff}
+
+@keyframes burst{
+  0%{opacity:0;transform:scale(0.2)}
+  8%{opacity:1;transform:scale(1.02)}
+  30%{opacity:1;transform:scale(1)}
+  70%{opacity:0.6;transform:scale(1.2)}
+  100%{opacity:0;transform:scale(1.6)}
+}
+
+/* glittering particles background */
+.glitter{
+  position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0.6;
+  background-image:radial-gradient(circle at 10% 20%, rgba(255,255,255,0.02) 0 2px, transparent 3px),
+                    radial-gradient(circle at 70% 40%, rgba(255,255,255,0.03) 0 2px, transparent 3px);
+  background-size: 100% 100%;
+}
+
+/* Diya at bottom */
+.diya{
+  position:relative;margin:28px auto 0;z-index:3;width:220px;height:120px;display:flex;align-items:flex-end;justify-content:center
+}
+.bowl{
+  width:160px;height:60px;border-radius:90px 90px 40px 40px/60px 60px 20px 20px;
+  background:linear-gradient(180deg,#0ec8dc,#4b1600);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 6px 18px rgba(255,200,80,0.06);
+  position:relative;transform:translateY(10px)
+}
+.wax{position:absolute;left:50%;top:-36px;transform:translateX(-50%);width:56px;height:56px;border-radius:50%;background:linear-gradient(180deg,#ffd85a,#ffb84d);box-shadow:0 6px 20px rgba(255,156,34,0.12)}
+.flame{
+  position:absolute;left:50%;top:-90px;transform:translateX(-50%);
+  width:22px;height:48px;border-radius:50% 50% 50% 50%;
+  background:radial-gradient(circle at 30% 20%, #fff 0 10%, rgba(255,255,255,0) 11%), linear-gradient(180deg,#fff5c6 0%, #ffd24a 35%, #ff7b1a 100%);
+  filter:blur(0.3px);
+  animation:flame 1.8s ease-in-out infinite;
+  box-shadow: 0 6px 22px rgba(251, 255, 12, 0.25);
+  transform-origin:50% 80%;
+}
+.flame:before{content:'';position:absolute;left:50%;top:10%;transform:translateX(-50%);width:10px;height:26px;border-radius:50%;background:linear-gradient(180deg,#fff 0%,#ffd36a 60%,#ff6f00 100%);opacity:0.9}
+@keyframes flame{
+  0%{transform:translateX(-50%) scaleY(1) rotate(-2deg)}
+  50%{transform:translateX(-50%) scaleY(1.08) rotate(2deg)}
+  100%{transform:translateX(-50%) scaleY(1) rotate(-2deg)}
+}
+
+/* small ground glow */
+.glow{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);width:420px;height:120px;border-radius:50%;background:radial-gradient(closest-side, rgba(68, 163, 8, 0.14), transparent 60%);z-index:1}
+
+/* footer text */
+.footer{margin-top:12px;color:#ab048a66;font-size:13px}
+
+/* responsive adjustments */
+@media (max-width:520px){
+  .card{padding:20px}
+  .diya{width:160px;height:90px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="fireworks" aria-hidden="true">
+      <div class="firework f1"></div>
+      <div class="firework f2"></div>
+      <div class="firework f3"></div>
+      <div class="firework f4"></div>
+    </div>
+    <div class="glitter" aria-hidden="true"></div><h1><span class="happy">Happy</span> Diwali</h1>
+<div class="sub">Wishing you a Diwali full of laughter, sweetness, and unforgettable moment,<Br>
+    May your life glow with light, joy and prosperity.</div>
+
+<div class="diya" aria-hidden="true">
+  <div class="bowl">
+    <div class="wax"></div>
+    <div class="flame" aria-hidden="true"></div>
+  </div>
+</div>
+
+<div class="glow" aria-hidden="true"></div>
+<div class="footer">Share this — copy the file and open in your browser to preview ✨</div>
+
+  </div>
+</body>
+</html>

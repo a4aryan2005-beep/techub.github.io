@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOGIN PAGE</title>
+<style>
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  background: #dcd8d8;
+  border-radius: 8px;
+  padding: 30px;
+  width: 300px;
+  text-align: center;
+}
+.card img{
+  width: 100px;  /* adjust size */
+  height: 100px;
+  margin-bottom: 15px;
+}
+h1{
+  color: #523fa6;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+input{
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color:#c3bec0;
+}
+button{
+  background-color: #372d61;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+button:hover{
+  background-color: #4604b2;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <!-- Logo -->
+  <img src="gec logo.jpg" alt="College Logo"> <!-- replace logo.png with actual path -->
+  
+  <h4>Login</h4>
+  <form action="">
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="last Name"> 
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
+</body>
+</html>
