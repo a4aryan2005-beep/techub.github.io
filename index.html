@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tech Hub — Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    /* Hacking / matrix-style background */
+    :root{--accent:#00e6e6;--bg:#020202}
+    html,body{height:100%;}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 60%), var(--bg);
+      color:#e6f7f7;
+      overflow-x:hidden;
+    }
+
+    .matrix {
+      position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.18; mix-blend-mode:screen;
+      background: repeating-linear-gradient(180deg, rgba(0,255,200,0.03) 0 1px, transparent 1px 18px);
+      background-size:100% 30px;
+      animation: float 12s linear infinite;
+    }
+    @keyframes float{ from{background-position:0 0} to{background-position:0 1200px} }
+
+    /* centered container */
+    .site-wrap{position:relative; z-index:2; padding:60px 20px 120px;}
+
+    /* logo */
+    .brand{display:flex; align-items:center; gap:14px}
+    .brand img{width:78px; height:78px; object-fit:contain; filter:drop-shadow(0 4px 18px rgba(0,230,230,0.12));}
+    .brand h1{font-size:28px; letter-spacing:6px; margin:0; color:var(--accent); font-weight:600}
+
+    /* hero */
+    .hero{display:flex; gap:30px; align-items:center; margin-top:36px}
+    .hero .left{flex:1}
+    .hero h2{font-size:38px; margin-bottom:6px}
+    .hero p{opacity:0.9}
+
+    /* skill badges */
+    .skill-badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+    .badge-skill{background:rgba(0,230,230,0.08); border:1px solid rgba(0,230,230,0.12); padding:8px 12px; border-radius:8px; color:var(--accent); font-weight:600}
+
+    /* cards */
+    .card-tech{background:rgba(255,255,255,0.02); border:1px solid rgba(0,230,230,0.06);}
+
+    /* footer */
+    footer{margin-top:60px; text-align:center; opacity:0.8}
+
+    /* form style */
+    .form-card{background:rgba(255,255,255,0.02); padding:20px; border-radius:10px; border:1px solid rgba(255,255,255,0.03)}
+
+    /* small screens */
+    @media(max-width:768px){
+      .hero{flex-direction:column; align-items:flex-start}
+      .brand h1{font-size:20px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="matrix" aria-hidden="true"></div>
+
+  <div class="container site-wrap">
+    <header class="d-flex justify-content-between align-items-center">
+      <div class="brand">
+        <!-- Replace logo.png with your supplied logo file -->
+        <img src="logo.png" alt="Tech Hub logo" onerror="this.style.display='none'" />
+        <div>
+          <h1>TECH HUB</h1>
+          <div style="font-size:12px; opacity:0.7">Coding • AI • Projects</div>
+        </div>
+      </div>
+      <nav>
+        <button class="btn btn-outline-light btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+        <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#admissionModal">Admission</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="left">
+        <h2 style="color:yellow(--green)">Learn. Build. Hack.</h2>
+        <p>Create projects, explore AI/ML, and master programming languages used in industry.
+           Unlock the power of technology by learning real-world skills that help you create, innovate, and solve problems.
+           From mastering programming languages to building intelligent systems, this platform empowers you to explore, experiment, and grow.
+           Whether you’re a beginner or an advanced learner, take your ideas from concept to reality—step by step.
+           Learn deeply. Build confidently. Hack creatively.</p>
+
+        <div class="skill-badges mt-3">
+          <span class="badge-skill">Python</span>
+          <span class="badge-skill">HTML</span>
+          <span class="badge-skill">CSS</span>
+          <span class="badge-skill">Bootstrap</span>
+          <span class="badge-skill">JavaScript</span>
+          <span class="badge-skill">React.js</span>
+          <span class="badge-skill">jQuery</span>
+          <span class="badge-skill">SQL</span>
+          <span class="badge-skill">C++</span>
+          <span class="badge-skill">Java</span>
+          <span class="badge-skill">AI & Machine Learning</span>
+        </div>
+
+        <div class="mt-4">
+          <a class="btn btn-lg" style="background:var(--accent); color:#001; font-weight:700" href="#projects">View Projects</a>
+        </div>
+      </div>
+
+      <div class="right" style="width:320px">
+        <div class="card card-tech p-3">
+          <h5 class="mb-2">Tools & Software</h5>
+          <ul class="list-unstyled small" style="line-height:1.9">
+            <li>• Microsoft Office</li>
+            <li>• Excel</li>
+            <li>• PowerPoint</li>
+            <li>• Word</li>
+          </ul>
+          <hr style="border-color:rgba(44, 64, 73, 0.2)" />
+          <h6 class="mb-1">Quick Links</h6>
+          <div class="d-flex gap-2 flex-wrap">
+            <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#chatModal">AI Chatbot</button>
+            <a class="btn btn-sm btn-outline-light" href="#projects">Projects</a>
+            <a class="btn btn-sm btn-outline-light" href="#skills">Skills</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr style="border-color:rgba(1, 230, 199, 0.555)" />
+
+    <section id="skills" class="mt-4">
+      <h3 style="color:var(--accent)">Programming Languages & Frameworks</h3>
+      <div class="row mt-3 g-3">
+        <div class="col-md-4">
+          <div class="p-3 form-card">
+            <h5>Languages</h5>
+            <p class="small mb-0">Python, C, HTML, CSS, JavaScript, SQL</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 form-card">
+            <h5>CSS Frameworks</h5>
+            <p class="small mb-0">Bootstrap (v5)</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 form-card">
+            <h5>JS Libraries / Frameworks</h5>
+            <p class="small mb-0">React.js, jQuery</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="mt-5">
+      <h3 style="color:var(--accent)">Projects</h3>
+      <div class="row mt-3 g-3">
+        <div class="col-md-4">
+          <div class="card card-tech p-3">
+            <h5>1. AI ChatBot using Machine Learning</h5>
+            <p class="small">A project that combines an ML model with a chat UI. (Server-side model + client UI). Click demo to open a lightweight frontend demo.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#chatModal">Open Demo</button>
+              <a class="btn btn-sm btn-outline-light" href="#">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card card-tech p-3">
+            <h5>2. Login Page</h5>
+            <p class="small">Clean, responsive login form with client-side validation and an example of protecting routes.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">Open Login</button>
+              <a class="btn btn-sm btn-outline-light" href="#">Docs</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card card-tech p-3">
+            <h5>3. Admission Form</h5>
+            <p class="small">A multi-field admission form with validation, file upload and summary preview.</p>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#admissionModal">Open Form</button>
+              <a class="btn btn-sm btn-outline-light" href="#">Export</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <small>© Tech Hub • Built By Expert Developer </small>
+    </footer>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control bg-transparent text-light" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control bg-transparent text-light" minlength="6" required>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn btn-success" type="submit">Sign in</button>
+              <small style="opacity:0.8">Demo login — no real auth</small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admission Modal -->
+  <div class="modal fade" id="admissionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Admission Form</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="admissionForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Full name</label>
+                <input type="text" class="form-control bg-transparent text-light" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control bg-transparent text-light" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-control bg-transparent text-light" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Course</label>
+                <select class="form-select bg-transparent text-light">
+                  <option>Data Analytics</option>
+                  <option>AI & ML</option>
+                  <option>Web Development</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Short message</label>
+                <textarea class="form-control bg-transparent text-light" rows="3"></textarea>
+              </div>
+              <div class="col-12 d-flex justify-content-between">
+                <div><small style="opacity:0.8">Upload resume (optional)</small></div>
+                <div>
+                  <input class="form-control form-control-sm bg-transparent text-light" type="file">
+                </div>
+              </div>
+              <div class="col-12 text-end">
+                <button class="btn btn-success" type="submit">Submit Admission</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Modal (simple demo) -->
+  <div class="modal fade" id="chatModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">AI Chatbot — Engineer</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="chatBox" style="height:260px; overflow:auto; border-radius:6px; padding:12px; background:rgba(0,0,0,0.4);">
+            <div class="small" style="opacity:0.8">Engineer: It uses simple rules for demo. For a real AI chatbot integrate a server-side ML model (Python + Flask / FastAPI) or use an API.</div>
+          </div>
+          <div class="input-group mt-3">
+            <input id="chatInput" class="form-control bg-transparent text-light" placeholder="Say hi" />
+            <button class="btn btn-success" id="sendChat">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    // Login demo
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Engineer login successful — replace with real authentication backend.');
+      var m = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+      m.hide();
+    });
+
+    // Admission demo
+    document.getElementById('admissionForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Admission form submitted (Engineer). Data would be sent to your server in production.');
+      var m = bootstrap.Modal.getInstance(document.getElementById('admissionModal'));
+      m.hide();
+    });
+
+    // Simple rule-based chat demo (client-side only)
+    const chatBox = document.getElementById('chatBox');
+    const chatInput = document.getElementById('chatInput');
+    document.getElementById('sendChat').addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', function(e){ if(e.key==='Enter') sendMessage(); });
+
+    function botReply(text){
+      text = text.toLowerCase();
+      if(text.includes('hello')||text.includes('hi')) return 'Hello! I am an Your Engineer bot. Ask about projects or languages.';
+      if(text.includes('python')) return 'Python is great for AI/ML, automation and web backends.';
+      if(text.includes('react')) return 'React.js is a popular front-end framework for building UIs.';
+      if(text.includes('bootstrap')) return 'Bootstrap helps quickly style responsive websites.';
+      if(text.includes('projects')) return 'Current demo projects: AI ChatBot, Login Page, Admission Form.';
+      return 'I can answer simple questions about languages and tools. For a real ML-chatbot integrate a model on the server.';
+    }
+
+    function sendMessage(){
+      const userText = chatInput.value.trim();
+      if(!userText) return;
+      appendMessage('You', userText);
+      chatInput.value='';
+      setTimeout(()=>{
+        appendMessage('Bot', botReply(userText));
+      }, 450);
+    }
+    function appendMessage(who, text){
+      const el = document.createElement('div');
+      el.className='mb-2';
+      el.innerHTML = '<strong style="color:var(--accent)">'+who+':</strong> <span class="small" style="opacity:0.9">'+escapeHtml(text)+'</span>';
+      chatBox.appendChild(el);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+    function escapeHtml(unsafe) {
+      return unsafe.replace(/[&<"']/g, function(m){return {'&':'&amp;','<':'&lt;','"':'&quot;',"'":"&#039;"}[m];});
+    }
+  </script>
+</body>
+</html>
